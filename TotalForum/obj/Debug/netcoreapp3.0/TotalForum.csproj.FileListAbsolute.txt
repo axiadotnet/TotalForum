@@ -1,0 +1,17 @@
+C:\Users\user\source\repos\TotalForum\TotalForum\bin\Debug\netcoreapp3.0\appsettings.Development.json
+C:\Users\user\source\repos\TotalForum\TotalForum\bin\Debug\netcoreapp3.0\appsettings.json
+C:\Users\user\source\repos\TotalForum\TotalForum\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+C:\Users\user\source\repos\TotalForum\TotalForum\bin\Debug\netcoreapp3.0\TotalForum.exe
+C:\Users\user\source\repos\TotalForum\TotalForum\bin\Debug\netcoreapp3.0\TotalForum.deps.json
+C:\Users\user\source\repos\TotalForum\TotalForum\bin\Debug\netcoreapp3.0\TotalForum.runtimeconfig.json
+C:\Users\user\source\repos\TotalForum\TotalForum\bin\Debug\netcoreapp3.0\TotalForum.runtimeconfig.dev.json
+C:\Users\user\source\repos\TotalForum\TotalForum\bin\Debug\netcoreapp3.0\TotalForum.dll
+C:\Users\user\source\repos\TotalForum\TotalForum\bin\Debug\netcoreapp3.0\TotalForum.pdb
+C:\Users\user\source\repos\TotalForum\TotalForum\obj\Debug\netcoreapp3.0\staticwebassets\TotalForum.StaticWebAssets.Manifest.cache
+C:\Users\user\source\repos\TotalForum\TotalForum\obj\Debug\netcoreapp3.0\staticwebassets\TotalForum.StaticWebAssets.xml
+C:\Users\user\source\repos\TotalForum\TotalForum\obj\Debug\netcoreapp3.0\TotalForum.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\source\repos\TotalForum\TotalForum\obj\Debug\netcoreapp3.0\TotalForum.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\TotalForum\TotalForum\obj\Debug\netcoreapp3.0\TotalForum.AssemblyInfo.cs
+C:\Users\user\source\repos\TotalForum\TotalForum\obj\Debug\netcoreapp3.0\TotalForum.RazorTargetAssemblyInfo.cache
+C:\Users\user\source\repos\TotalForum\TotalForum\obj\Debug\netcoreapp3.0\TotalForum.dll
+C:\Users\user\source\repos\TotalForum\TotalForum\obj\Debug\netcoreapp3.0\TotalForum.pdb
