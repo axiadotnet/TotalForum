@@ -7,7 +7,7 @@ namespace TotalForum.Model
 {
     public interface IUserRepository
     {
-        IEnumerable<User> AllUser { get; set; }
+        IQueryable<User> AllUser { get; set; }
 
         Task<User> InsertUser(User user);
         Task<bool> DeleteUser(int id);

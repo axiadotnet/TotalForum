@@ -7,7 +7,7 @@ namespace TotalForum.Model
 {
     public interface IPostRepository
     {
-        IEnumerable<Post> AllPost { get; set; }
+        IQueryable<Post> AllPost { get; set; }
         Task<Post> InsertPost(Post post);
         Task<bool> DeletePost(int id);
         Task<Post> UpdatePost(Post post);
