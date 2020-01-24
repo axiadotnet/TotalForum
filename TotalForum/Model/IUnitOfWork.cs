@@ -15,11 +15,15 @@ namespace TotalForum.Model
         Task<bool> DeleteUser(int id);
         Task<User> UpdateUser(User user);
         Task<IEnumerable<User>> GetAllUser();
+        Task<IEnumerable<User>> SearchUserByName(string name);
+        
 
         //User
-        Task<Post> InsertUser(Post post);
+        Task<Post> InsertPost(Post post);
         Task<bool> DeletePost(int id);
         Task<Post> UpdatePost(Post post);
         Task<IEnumerable<Post>> GetAllPost();
+        Task<IEnumerable<Post>> SearchPostByUserId(int id);
+        
     }
 }

@@ -37,7 +37,7 @@ namespace TotalForum.Model
             return PostRepository.DeletePost(id);
         }
 
-        public Task<IEnumerable<Post>> GetPostByUserId(int id)
+        public Task<IEnumerable<Post>> SearchPostByUserId(int id)
         {
             return PostRepository.GetPostByUserId(id);
         }
@@ -74,9 +74,10 @@ namespace TotalForum.Model
                     await UserRepository.DeleteUser(id) : false);
         }
 
-        public Task<IEnumerable<User>> GetUsersByName(string name) 
+        public Task<IEnumerable<User>> SearchUserByName(string name) 
         {
             return UserRepository.GetUsersByName(name);
         }
+
     }
 }
