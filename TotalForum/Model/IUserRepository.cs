@@ -14,5 +14,6 @@ namespace TotalForum.Model
         Task<User> UpdateUser(User user);
         Task<List<User>> GetAllUser();
         Task<List<User>> GetUsersByName(string name);
+        Task<User> GetUserById(int id);
     }
 }

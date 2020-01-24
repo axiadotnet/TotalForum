@@ -11,10 +11,10 @@ namespace TotalForum.Model
         Task<Post> InsertPost(Post post);
         Task<bool> DeletePost(int id);
         Task<Post> UpdatePost(Post post);
-        Task<IEnumerable<Post>> GetAllPost();
+        Task<List<Post>> GetAllPost();
 
         Task<bool> DeletePostsByUserId(int userId);
-        Task<IEnumerable<Post>> GetPostByUserId(int id);
+        Task<List<Post>> GetPostsByUserId(int id);
 
     }
 }

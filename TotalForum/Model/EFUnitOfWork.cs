@@ -17,7 +17,7 @@ namespace TotalForum.Model
             PostRepository = postRepository;
         }
 
-        public Task<IEnumerable<Post>> GetAllPost()
+        public Task<List<Post>> GetAllPost()
         {
             return PostRepository.GetAllPost();
         }
@@ -37,13 +37,13 @@ namespace TotalForum.Model
             return PostRepository.DeletePost(id);
         }
 
-        public Task<IEnumerable<Post>> SearchPostByUserId(int id)
+        public Task<List<Post>> SearchPostsByUserId(int id)
         {
-            return PostRepository.GetPostByUserId(id);
+            return PostRepository.GetPostsByUserId(id);
         }
 
        
-        public Task<IEnumerable<User>> GetAllUser()
+        public Task<List<User>> GetAllUser()
         {
             return UserRepository.GetAllUser();
         }
@@ -74,10 +74,14 @@ namespace TotalForum.Model
                     await UserRepository.DeleteUser(id) : false);
         }
 
-        public Task<IEnumerable<User>> SearchUserByName(string name) 
+        public Task<List<User>> SearchUserByName(string name) 
         {
             return UserRepository.GetUsersByName(name);
         }
 
+        public Task<User> GetUserById(int id)
+        {
+            return UserRepository.GetUserById(id);
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace TotalForum.Model
         {
             return AllUser.ToListAsync();
         }
-        public Task<User> GetUserByID(int id)
+        public Task<User> GetUserById(int id)
         {
             return AllUser.Where(user => user.Id == id).FirstOrDefaultAsync();
         }
@@ -43,7 +43,7 @@ namespace TotalForum.Model
         }
         public async Task<bool> DeleteUser(int id)
         {
-            var user = await GetUserByID(id);
+            var user = await GetUserById(id);
             Ctx.Remove<User>(user);
             return await Ctx.SaveChangesAsync()>0;
         }

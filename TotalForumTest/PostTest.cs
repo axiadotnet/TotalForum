@@ -2,6 +2,7 @@
 using TotalForum.Model;
 using Xunit;
 using System.Collections.Generic;
+using FluentAssertions;
 
 namespace TotalForumTest
 {
@@ -30,6 +31,8 @@ namespace TotalForumTest
 
             //Assert
             Assert.IsType<Post>(newPost);
+
+            newPost.Should().BeOfType<Post>();
         }
 
         [Fact]
@@ -40,7 +43,9 @@ namespace TotalForumTest
 
             int actualWordCount = newPost.TextWordsCount();
 
-            Assert.Equal<int>(expectedWordCount, actualWordCount);
+            //Assert.Equal<int>(expectedWordCount, actualWordCount);
+
+            actualWordCount.Should().Be(expectedWordCount);
         }
 
         [Fact]
@@ -51,7 +56,9 @@ namespace TotalForumTest
 
             int actualWordCount = Post.WordsCount(text);
 
-            Assert.Equal<int>(expectedeWordCount, actualWordCount);
+            //Assert.Equal<int>(expectedeWordCount, actualWordCount);
+
+            actualWordCount.Should().Be(expectedeWordCount);
         }
 
         [Theory]
@@ -64,7 +71,9 @@ namespace TotalForumTest
 
             int actualWordCount = Post.WordsCount(text);
 
-            Assert.Equal<int>(expectedWordCount, actualWordCount);
+            //Assert.Equal<int>(expectedWordCount, actualWordCount);
+
+            actualWordCount.Should().Be(expectedWordCount);
         }
 
         [Theory]
@@ -76,7 +85,9 @@ namespace TotalForumTest
 
             int actualWordCount = Post.WordsCount(text);
 
-            Assert.Equal<int>(expectedWordCount, actualWordCount);
+            //Assert.Equal<int>(expectedWordCount, actualWordCount);
+
+            actualWordCount.Should().Be(expectedWordCount);
         }
     }
 }

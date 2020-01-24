@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TotalForum.Model;
 using Xunit;
+using FluentAssertions;
 
 namespace TotalForumTest
 {
@@ -47,6 +48,8 @@ namespace TotalForumTest
             var newUser = new User(id, userName, email, password, posts, dob);
 
             Assert.IsType<User>(newUser);
+
+            newUser.Should().BeOfType<User>();
         }
 
         [Fact]
@@ -56,7 +59,7 @@ namespace TotalForumTest
             string userName = "pippoHot";
             string email = "pippo@hotmail.com";
             string password = "qwerty1";
-            List<Post> posts = new List<Post>() { new Post(12, "case a borgoratti", "le case a borgoratti sono di moda", DateTime.Now, 4)};
+            List<Post> posts = new List<Post>() { new Post(12, "case a borgoratti", "le case a borgoratti sono di moda", DateTime.Now, 4) };
             DateTime dob = DateTime.Now;
             var newUser = new User(id, userName, email, password, posts, dob);
             int expectedPostCount = 1;
@@ -64,7 +67,9 @@ namespace TotalForumTest
 
             int actualPostCount = newUser.PostCount;
 
-            Assert.Equal<int>(expectedPostCount, actualPostCount);
+            ///Assert.Equal<int>(expectedPostCount, actualPostCount);
+
+            actualPostCount.Should().Be(expectedPostCount);
 
         }
 
@@ -84,7 +89,10 @@ namespace TotalForumTest
 
             int actualPostCount = newUser.PostCountMethod();
 
-            Assert.Equal<int>(expectedPostCount, actualPostCount);
+
+            //Assert.Equal<int>(expectedPostCount, actualPostCount);
+
+            actualPostCount.Should().Be(expectedPostCount);
 
         }
 
@@ -98,7 +106,9 @@ namespace TotalForumTest
         {
             bool ActualIsMail = User.CheckMail(mail);
 
-            Assert.Equal<bool>(expectedIsMail, ActualIsMail);
+            //Assert.Equal<bool>(expectedIsMail, ActualIsMail);
+
+            ActualIsMail.Should().Be(expectedIsMail);
         }
 
         [Fact]
@@ -111,12 +121,12 @@ namespace TotalForumTest
             List<Post> posts = new List<Post>();
             DateTime dob = new DateTime(1980, 1, 20);
             var newUser = new User(id, userName, email, password, posts, dob);
-            int expectedDay = 365;
+            int expectedDay = 362;
 
             int actualDay = newUser.DayToBirthdate();
 
-            Assert.Equal<int>(expectedDay, actualDay);
-
+            //Assert.Equal<int>(expectedDay, actualDay);
+            actualDay.Should().Be(expectedDay);
         }
 
 
@@ -127,8 +137,25 @@ namespace TotalForumTest
 
             int actualDays = user.DayToBirthdate();
 
-            Assert.Equal<int>(expectedDays, actualDays);
+            //Assert.Equal<int>(expectedDays, actualDays);
 
+            actualDays.Should().Be(expectedDays);
+
+        }
+
+
+        [Theory]
+        [InlineData(new string[] { "pippo", "amelia", "ezechiele", "nonna papera"}, 3)]
+        [InlineData(new string[] { "a", "b", "z", "f", "a", "c"}, 4)]
+        [InlineData(new string[] { "a", "alberto", "alessio"}, 0)]
+        [InlineData(new string[] { "z", "zuzzerellone", "porco" }, 3)]
+        public void TestRemoveAndSort(string[] stringArray, int expectedCount)
+        {
+            var actualArray = User.RemoveAndOrder(stringArray);
+            
+            actualArray.Should().BeInAscendingOrder();
+
+            actualArray.Length.Should().Be(expectedCount);
         }
     }
 }

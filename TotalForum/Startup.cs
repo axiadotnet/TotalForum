@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TotalForum.Model;
 
 namespace TotalForum
 {
@@ -26,6 +27,10 @@ namespace TotalForum
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<EFContext>();
+            services.AddTransient<IUserRepository, EFUserRepository>();
+            services.AddTransient<IPostRepository, EFPostRepository>();
+            services.AddTransient<IUnitOfWork, EFUnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using TotalForum.Model;
+using System.Linq;
 
 namespace TotalForum.Model
 {
@@ -22,12 +23,12 @@ namespace TotalForum.Model
             this.UserName = userName;
             this.Email = email;
             this.Password = password;
-            this.Posts = posts;
+            this.Posts = posts==null? new List<Post>() : posts;
             this.Dob = dob;
         }
         public User()
         {
-
+            this.Posts = new List<Post>();
         }
 
         public int PostCountMethod()
@@ -69,6 +70,11 @@ namespace TotalForum.Model
                 nextBirthday = nextBirthday.AddYears(1);
             }
             return (nextBirthday - DateTime.Today).Days;
+        }
+
+        public static string[] RemoveAndOrder(string[] stringArray)
+        {
+            return stringArray.Where(s => !s.ToLower()[0].Equals('a')).OrderBy(s => s).ToArray();
         }
     }
 }

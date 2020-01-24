@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,30 +16,48 @@ namespace TotalForum.Model
             AllPost = ctx.Post;
         }
 
-        public Task<IEnumerable<Post>> GetAllPost()
+        public Task<List<Post>> GetAllPost()
         {
-            throw new NotImplementedException();
+            return AllPost.ToListAsync();
         }
-        public Task<IEnumerable<Post>> GetPostByUserId(int id)
+        public Task<List<Post>> GetPostsByUserId(int userId)
         {
-            throw new NotImplementedException();
+            return AllPost.Where(p => p.Id == userId).ToListAsync();
         }
-        public Task<Post> InsertPost(Post post)
+        public Task<Post> GetPostById(int id)
         {
-            throw new NotImplementedException();
-        }
-        public Task<Post> UpdatePost(Post post)
-        {
-            throw new NotImplementedException();
-        }
-        public Task<bool> DeletePost(int id)
-        {
-            throw new NotImplementedException();
+            return AllPost.Where(p => p.Id == id).FirstOrDefaultAsync();
         }
 
-        public Task<bool> DeletePostsByUserId(int userId)
+        public async Task<Post> InsertPost(Post post)
         {
-            throw new NotImplementedException();
+            Ctx.Add<Post>(post);
+            await Ctx.SaveChangesAsync();
+            return post;
+        }
+        public async Task<Post> UpdatePost(Post post)
+        {
+            Ctx.Update<Post>(post);
+            await Ctx.SaveChangesAsync();
+            return post;
+        }
+        public async Task<bool> DeletePost(int id)
+        {
+
+            var post = await GetPostById(id);
+            Ctx.Remove(post);
+            return await Ctx.SaveChangesAsync()> 0;
+        }
+
+        public async Task<bool> DeletePostsByUserId(int userId)
+        {
+
+            var posts = await GetPostsByUserId(userId);
+            foreach (var item in posts)
+            {
+                Ctx.Remove(item);
+            }     
+            return await Ctx.SaveChangesAsync() > 0;
         }
 
 

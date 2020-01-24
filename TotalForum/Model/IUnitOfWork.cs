@@ -12,18 +12,20 @@ namespace TotalForum.Model
 
         //Post
         Task<User> InsertUser(User user);
+
+        Task<User> GetUserById(int id);
         Task<bool> DeleteUser(int id);
         Task<User> UpdateUser(User user);
-        Task<IEnumerable<User>> GetAllUser();
-        Task<IEnumerable<User>> SearchUserByName(string name);
+        Task<List<User>> GetAllUser();
+        Task<List<User>> SearchUserByName(string name);
         
 
         //User
         Task<Post> InsertPost(Post post);
         Task<bool> DeletePost(int id);
         Task<Post> UpdatePost(Post post);
-        Task<IEnumerable<Post>> GetAllPost();
-        Task<IEnumerable<Post>> SearchPostByUserId(int id);
+        Task<List<Post>> GetAllPost();
+        Task<List<Post>> SearchPostsByUserId(int id);
         
     }
 }
