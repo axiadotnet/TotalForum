@@ -21,6 +21,11 @@ namespace TotalForum.Model
             Date = date;
             UserId = userId;
         }
+        
+        public Post()
+        {
+
+        }
 
         public override string ToString()
         {

@@ -25,6 +25,10 @@ namespace TotalForum.Model
             this.Posts = posts;
             this.Dob = dob;
         }
+        public User()
+        {
+
+        }
 
         public int PostCountMethod()
         {
