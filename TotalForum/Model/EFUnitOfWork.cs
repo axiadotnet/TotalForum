@@ -11,6 +11,12 @@ namespace TotalForum.Model
         public IUserRepository UserRepository { get; set; }
         public IPostRepository PostRepository { get; set; }
 
+        public EFUnitOfWork(IUserRepository userRepository, IPostRepository postRepository)
+        {
+            UserRepository = userRepository;
+            PostRepository = postRepository;
+        }
+
         public Task<IEnumerable<Post>> GetAllPost()
         {
             return PostRepository.GetAllPost();
@@ -23,44 +29,54 @@ namespace TotalForum.Model
 
         public Task<Post> UpdatePost(Post post)
         {
-            throw new NotImplementedException();
-        }
-
-        public EFUnitOfWork(IUserRepository userRepository, IPostRepository postRepository)
-        {
-            UserRepository = userRepository;
-            PostRepository = postRepository;
+            return PostRepository.UpdatePost(post);
         }
 
         public Task<bool> DeletePost(int id)
         {
-            throw new NotImplementedException();
+            return PostRepository.DeletePost(id);
         }
 
-        public Task<bool> DeleteUser(int id)
+        public Task<IEnumerable<Post>> GetPostByUserId(int id)
         {
-            throw new NotImplementedException();
+            return PostRepository.GetPostByUserId(id);
         }
 
-
-
+       
         public Task<IEnumerable<User>> GetAllUser()
         {
-            throw new NotImplementedException();
+            return UserRepository.GetAllUser();
         }
 
         public Task<User> InsertUser(User user)
         {
-            throw new NotImplementedException();
+            return UserRepository.InsertUser(user);
         }
-
-
-
-
 
         public Task<User> UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            return UserRepository.UpdateUser(user);
+        }
+
+        public async Task<bool> DeleteUser(int id)
+        {
+            // var areDeletedPosts = await PostRepository.DeletePostsByUserId(id);
+            //if (areDeletedPosts)
+            //{
+            //    return await UserRepository.DeleteUser(id);
+            //}
+            //else
+            //{
+            //    return false;
+            //}     
+
+            return (await PostRepository.DeletePostsByUserId(id) ?
+                    await UserRepository.DeleteUser(id) : false);
+        }
+
+        public Task<IEnumerable<User>> GetUsersByName(string name) 
+        {
+            return UserRepository.GetUsersByName(name);
         }
     }
 }
