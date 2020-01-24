@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForumTest\\TotalForumTest.csproj": {}
+    "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForumTest\\TotalForumTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForumTest\\TotalForumTest.csproj": {
+    "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForumTest\\TotalForumTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForumTest\\TotalForumTest.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForumTest\\TotalForumTest.csproj",
         "projectName": "TotalForumTest",
-        "projectPath": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForumTest\\TotalForumTest.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForumTest\\TotalForumTest.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForumTest\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForumTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForum\\TotalForum.csproj": {
-                "projectPath": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForum\\TotalForum.csproj"
+              "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForum\\TotalForum.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForum\\TotalForum.csproj"
               }
             }
           }
@@ -81,14 +81,14 @@
         }
       }
     },
-    "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForum\\TotalForum.csproj": {
+    "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForum\\TotalForum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForum\\TotalForum.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForum\\TotalForum.csproj",
         "projectName": "TotalForum",
-        "projectPath": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForum\\TotalForum.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForum\\TotalForum.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForum\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForum\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

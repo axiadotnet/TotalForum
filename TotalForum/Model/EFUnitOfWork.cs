@@ -3,12 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace TotalForum.Model
 {
     public class EFUnitOfWork : IUnitOfWork
     {
         public IUserRepository UserRepository { get; set; }
         public IPostRepository PostRepository { get; set; }
+
+        public Task<IEnumerable<Post>> GetAllPost()
+        {
+            return PostRepository.GetAllPost();
+        }
+
+        public Task<Post> InsertPost(Post post)
+        {
+            return PostRepository.InsertPost(post);
+        }
+
+        public Task<Post> UpdatePost(Post post)
+        {
+            throw new NotImplementedException();
+        }
 
         public EFUnitOfWork(IUserRepository userRepository, IPostRepository postRepository)
         {
@@ -26,10 +42,7 @@ namespace TotalForum.Model
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Post>> GetAllPost()
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Task<IEnumerable<User>> GetAllUser()
         {
@@ -41,15 +54,9 @@ namespace TotalForum.Model
             throw new NotImplementedException();
         }
 
-        public Task<Post> InsertUser(Post post)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<Post> UpdatePost(Post post)
-        {
-            throw new NotImplementedException();
-        }
+
+
 
         public Task<User> UpdateUser(User user)
         {

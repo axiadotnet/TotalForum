@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForum\\TotalForum.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForum\\TotalForum.csproj",
       "projectName": "TotalForum",
-      "projectPath": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForum\\TotalForum.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForum\\TotalForum.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\TotalForum\\TotalForum\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\corsoDotnet\\github\\TotalForum\\TotalForum\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
