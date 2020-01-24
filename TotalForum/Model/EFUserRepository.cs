@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,31 +8,45 @@ namespace TotalForum.Model
 {
     public class EFUserRepository : IUserRepository
     {
-        public IQueryable<User> AllUser { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public Task<bool> DeleteUser(int id)
+        public EFContext Ctx { get; set; }
+        public IQueryable<User> AllUser { get; set; }
+        public EFUserRepository(EFContext ctx)
         {
-            throw new NotImplementedException();
+            this.Ctx = ctx;
+            AllUser = ctx.User;
         }
 
-        public Task<IEnumerable<User>> GetAllUser()
+        public Task<List<User>> GetAllUser()
         {
-            throw new NotImplementedException();
+            return AllUser.ToListAsync();
+        }
+        public Task<User> GetUserByID(int id)
+        {
+            return AllUser.Where(user => user.Id == id).FirstOrDefaultAsync();
+        }
+        public Task<List<User>> GetUsersByName(string name)
+        {
+            return AllUser.Where(user => user.UserName.Contains(name)).ToListAsync();
         }
 
-        public Task<IEnumerable<User>> GetUsersByName(string name)
+        public async Task<User> InsertUser(User user)
         {
-            throw new NotImplementedException();
+            await Ctx.AddAsync<User>(user);
+            Ctx.SaveChanges();
+            return user;
         }
-
-        public Task<User> InsertUser(User user)
+        public async Task<User> UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            Ctx.Update<User>(user);
+            await Ctx.SaveChangesAsync();
+            return user;
         }
-
-        public Task<User> UpdateUser(User user)
+        public async Task<bool> DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            var user = await GetUserByID(id);
+            Ctx.Remove<User>(user);
+            return await Ctx.SaveChangesAsync()>0;
         }
+        
     }
 }

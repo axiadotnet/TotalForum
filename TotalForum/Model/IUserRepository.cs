@@ -12,7 +12,7 @@ namespace TotalForum.Model
         Task<User> InsertUser(User user);
         Task<bool> DeleteUser(int id);
         Task<User> UpdateUser(User user);
-        Task<IEnumerable<User>> GetAllUser();
-        Task<IEnumerable<User>> GetUsersByName(string name);
+        Task<List<User>> GetAllUser();
+        Task<List<User>> GetUsersByName(string name);
     }
 }
